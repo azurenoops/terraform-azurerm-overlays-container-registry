@@ -87,13 +87,18 @@ variable "create_private_endpoint_subnet" {
   default     = false
 }
 
-variable "existing_private_subnet_name" {
-  description = "Name of the existing subnet for the private endpoint"
+variable "virtual_network_name" {
+  description = "Name of the virtual network for the private endpoint"
   default     = null
 }
 
-variable "virtual_network_name" {
-  description = "Name of the virtual network for the private endpoint"
+variable "existing_vnet_id" {
+  description = "ID of the existing virtual network for the private endpoint"
+  default     = null
+}
+
+variable "existing_subnet_id" {
+  description = "The resource id of existing subnet"
   default     = null
 }
 

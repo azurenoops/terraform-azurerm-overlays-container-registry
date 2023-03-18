@@ -46,10 +46,9 @@ module "acr" {
   # Creating Private Endpoint requires, VNet name and address prefix to create a subnet
   # By default this will create a `privatelink.azurecr.io` DNS zone. 
   # To use existing private DNS zone specify `existing_private_dns_zone` with valid zone name
-  enable_private_endpoint = true  
-  virtual_network_name    = azurerm_virtual_network.vnet.name
-  create_private_endpoint_subnet = true
-  private_subnet_address_prefix = ["10.0.100.0/24"]
+  enable_private_endpoint        = true
+  virtual_network_name           = azurerm_virtual_network.vnet.name  
+  private_subnet_address_prefix  = ["10.0.100.0/24"]
   # existing_private_dns_zone     = "demo.example.com"
 
   # Tags for Azure Resources
