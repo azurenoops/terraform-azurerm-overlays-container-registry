@@ -76,24 +76,8 @@ variable "existing_private_dns_zone" {
   default     = null
 }
 
-variable "private_subnet_address_prefix" {
-  description = "The name of the subnet for private endpoints"
-  default     = null
-}
-
-variable "create_private_endpoint_subnet" {
-  description = "Controls if the subnet should be created. If set to false, the subnet name must be provided. Default is false."
-  type        = bool
-  default     = false
-}
-
 variable "virtual_network_name" {
   description = "Name of the virtual network for the private endpoint"
-  default     = null
-}
-
-variable "existing_vnet_id" {
-  description = "ID of the existing virtual network for the private endpoint"
   default     = null
 }
 
@@ -113,7 +97,7 @@ variable "sku" {
 }
 
 variable "admin_enabled" {
-  description = "Whether the admin user is enabled."
+  description = "Whether the admin user is enabled. Disable this in production, default is false."
   type        = bool
   default     = false
 }
@@ -238,7 +222,7 @@ variable "container_registry_webhooks" {
 variable "public_network_access_enabled" {
   description = "Whether the Container Registry is accessible publicly."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "data_endpoint_enabled" {

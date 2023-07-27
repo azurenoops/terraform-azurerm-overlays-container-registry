@@ -18,12 +18,12 @@ output "container_registry_fqdn" {
   value       = azurerm_container_registry.container_registry.login_server
 }
 
-output "admin_username" {
+output "registry_username" {
   description = "The Username associated with the Container Registry Admin account - if the admin account is enabled."
   value       = azurerm_container_registry.container_registry.admin_username
 }
 
-output "admin_password" {
+output "registry_password" {
   description = "The Password associated with the Container Registry Admin account - if the admin account is enabled."
   value       = azurerm_container_registry.container_registry.admin_password
   sensitive   = true
