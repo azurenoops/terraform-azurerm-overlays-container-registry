@@ -18,7 +18,7 @@ data "azurerm_subnet" "snet" {
 }
 
 resource "azurerm_private_endpoint" "pep" {
-  count               = var.enable_private_endpoint ? 1 : 0
+  count               = var.enable_private_endpoint && var.existing_private_subnet_name != null ? 1 : 0
   name                = format("%s-private-endpoint", local.container_name)
   location            = var.location
   resource_group_name = local.resource_group_name
