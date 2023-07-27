@@ -76,6 +76,11 @@ variable "existing_private_dns_zone" {
   default     = null
 }
 
+variable "existing_private_subnet_name" {
+  description = "Name of the existing private subnet for the private endpoint"
+  default     = null
+}
+
 variable "virtual_network_name" {
   description = "Name of the virtual network for the private endpoint"
   default     = null
