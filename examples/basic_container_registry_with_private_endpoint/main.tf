@@ -24,7 +24,7 @@ module "acr" {
   # to use an existing resource group, provide the name of the existing resource group.
   # using `existing_resource_group_name` will ignore `create_container_registry_resource_group` and `custom_resource_group_name`.
   # The location of the group  will remain the same if you use the current resource.
-  existing_resource_group_name = "anoa-eus-dev-acr-dev-rg"
+  existing_resource_group_name = azurerm_resource_group.rg.name
   location                     = module.mod_azure_region_lookup.location_cli
   environment                  = "public"
   deploy_environment           = "dev"
@@ -46,9 +46,9 @@ module "acr" {
   # Creating Private Endpoint requires, VNet name and address prefix to create a subnet
   # By default this will create a `privatelink.azurecr.io` DNS zone. 
   # To use existing private DNS zone specify `existing_private_dns_zone` with valid zone name
-  enable_private_endpoint        = true
-  virtual_network_name           = azurerm_virtual_network.vnet.name  
-  private_subnet_address_prefix  = ["10.0.100.0/24"]
+  enable_private_endpoint      = true
+  virtual_network_name         = azurerm_virtual_network.vnet.name
+  existing_private_subnet_name = azurerm_subnet.subnet.name
   # existing_private_dns_zone     = "demo.example.com"
 
   # Tags for Azure Resources
