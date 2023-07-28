@@ -29,7 +29,8 @@ module "acr" {
   org_name                                 = "anoa"
   workload_name                            = "dev-acr"
   sku                                      = "Standard"
-
+  public_network_access_enabled            = true
+  
   # Tags for Azure Resources
   add_tags = {
     foo = "bar"
