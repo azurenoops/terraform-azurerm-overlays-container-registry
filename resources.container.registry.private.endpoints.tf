@@ -15,6 +15,7 @@ data "azurerm_subnet" "snet" {
   name                 = var.existing_private_subnet_name
   virtual_network_name = data.azurerm_virtual_network.vnet.0.name
   resource_group_name  = local.resource_group_name
+  
 }
 
 resource "azurerm_private_endpoint" "pep" {
